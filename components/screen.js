@@ -1,14 +1,14 @@
 import React from 'react';
 
 import {connect} from 'react-redux';
-import store from './redux-store';
+import store from '../redux-store';
 
-import {renderScreen} from './functions';
+import {renderScreen} from '../functions';
 
 const Screen = ({currentScreen, allScreens}) => (
   <div className="screen">
       {
-        renderScreen(currentScreen, allScreens)        
+        renderScreen(currentScreen, allScreens)
       }
   </div>
 );

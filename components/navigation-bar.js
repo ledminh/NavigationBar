@@ -1,9 +1,9 @@
 import React from 'react';
 
-import {renderButtons} from './functions';
+import {renderButtons} from '../functions';
 
 
-require('./style.scss');
+require('../style.scss');
 
 //===============
 //MAIN COMPONENT
@@ -14,7 +14,7 @@ const NavigationBar = ({style, buttons}) => (
         {
           renderButtons(buttons)
         }
-      </div>      
+      </div>
   </div>
 );
 

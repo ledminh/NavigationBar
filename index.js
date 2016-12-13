@@ -1,33 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
-import {createBar} from './component';
+import NavBarComponent from './components/navigation-bar';
+import ScreenComponent from './components/screen';
 
-const Page = ({name}) => (
-  <div>{name}</div>
-);
+import store from './redux-store';
 
-const navBarConfig = {
-  position: "bottom",
-  buttons: {
-    "PAGE 1": <Page name="page 1" />,
-    "Page 2": <Page name="page 2" />,
-    "Page 3": <Page name="This is page 3" />,
-    "page 4": <Page name="page 4" />
-  },
-  default: "Page 2"
+import {Provider} from 'react-redux';
+
+import {getStyle, getButtonsName, changeScreen} from './functions';
+
+export function createBar(navBarConfig){
+    var style = getStyle(navBarConfig.position);
+    var buttons = getButtonsName(navBarConfig.buttons);
+
+    const NavBar = <Provider store={store}><NavBarComponent style={style} buttons={buttons}/></Provider>;
+    const Screen = <Provider store={store}><ScreenComponent allScreens={navBarConfig.buttons}  /></Provider>
+
+    changeScreen(navBarConfig.default);
+
+    return {
+      NavBar,
+      Screen
+    }
 }
-
-const {NavBar, Screen} = createBar(navBarConfig);
-
-const Main = (props) => (
-  <div>
-      <div className="main-screen">
-          {Screen}
-      </div>
-      {NavBar}
-  </div>
-);
-
-
-ReactDOM.render(<Main />, document.getElementById('app'));
