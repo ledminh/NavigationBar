@@ -5,11 +5,11 @@ A customizable navigation bar for your website using React.
 
 ###Usage
 
-*Clone this project: `git clone https://github.com/ledminh/NavigationBar`
+* Clone this project: `git clone https://github.com/ledminh/NavigationBar`
 
-*Install all dependencies: `npm install`
+* Install all dependencies: `npm install`
 
-*cd to test to check it out:
+* cd to test to check it out:
 
 ```
 cd test
