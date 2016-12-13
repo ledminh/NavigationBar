@@ -1,0 +1,29 @@
+.navigation-bar {
+  position: absolute;
+  width: 100%;
+  background-color: #1f437c;
+  color: white;
+
+  .buttons {
+    width: 75%;
+    margin: auto;
+    text-align: center;
+
+    .button {
+      display:inline-block;
+      margin-right: 10px;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: lighten(#7c4e1f,10);
+      }
+    }
+  }
+}
+
+.button-active {
+  background-color: #7c4e1f;
+  font-weight: bold;
+  height: 30px;
+}
